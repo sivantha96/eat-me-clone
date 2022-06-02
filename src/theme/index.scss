@@ -17,6 +17,10 @@
 @import './components/components.header';
 @import './components/components.drawer';
 @import './components/components.footer';
+@import './components/components.sticky';
+
+// trumps
+@import './trumps/trumps.layout';
 
 :export {
   primaryColor: $em-clr-primary;

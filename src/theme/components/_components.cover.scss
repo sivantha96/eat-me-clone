@@ -4,11 +4,9 @@
   grid-template-areas: 'image details';
   grid-template-columns: 30% 1fr;
   grid-template-rows: auto;
-  padding: 20px 0px;
 
   @media screen and (max-width: $em-sizes-sm) {
     display: block;
-    padding: 0px;
   }
 
   &__image {
@@ -17,9 +15,11 @@
     width: 100%;
     border-radius: 5px;
     position: relative;
+    z-index: -1;
 
     @media screen and (max-width: $em-sizes-sm) {
       height: 30vh;
+      border-radius: 0px;
     }
 
     &__button {

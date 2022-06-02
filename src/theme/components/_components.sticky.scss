@@ -1,0 +1,10 @@
+.em-sticky {
+  &__header {
+    width: 100%;
+    border-top: 1px solid $em-clr-black-15;
+    box-shadow: 0 4px 10px 0px $em-clr-black-15;
+    display: flex;
+    align-items: center;
+    overflow-x: scroll;
+  }
+}

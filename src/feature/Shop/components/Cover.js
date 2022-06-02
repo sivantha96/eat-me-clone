@@ -2,13 +2,15 @@ import React from 'react';
 import CoverDetails from './CoverDetails';
 import CoverImage from './CoverImage';
 
-const Cover = () => {
+const Cover = React.forwardRef((_props, ref) => {
   return (
-    <div className="em-cover">
+    <div ref={ref} className="em-cover em-container">
       <CoverImage />
       <CoverDetails />
     </div>
   );
-};
+});
+
+Cover.displayName = 'Cover';
 
 export default Cover;

@@ -8,7 +8,7 @@ export default function Header() {
   const dispatch = useDispatch();
 
   return (
-    <div className="em-header px-4 px-md-5">
+    <div className="em-header em-container">
       <div className="em-header__left">
         <img
           src={Images.app_logo}

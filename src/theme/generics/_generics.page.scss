@@ -1,10 +1,10 @@
 .page {
   width: 100%;
-  padding: 100px 3rem 0 3rem;
+  padding: 100px 0 0 0;
   min-height: 100vh;
 
   @media screen and (max-width: $em-sizes-md) {
-    padding: 100px 1.5rem 0 1.5rem;
+    padding: 100px 0 0 0;
   }
 
   @media screen and (max-width: $em-sizes-sm) {
@@ -32,4 +32,14 @@ body {
   margin: 0px;
   padding: 0px;
   overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.is-sticky {
+  position: fixed;
+  top: 100px;
+
+  @media screen and (max-width: $em-sizes-sm) {
+    top: 80px;
+  }
 }

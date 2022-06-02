@@ -1,5 +1,5 @@
 import React from 'react';
-import Helmet from 'react-helmet';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { useSelector } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
 import Drawer from './components/Drawer';
@@ -13,7 +13,7 @@ function App() {
   const pageTitle = (title ? `${title} | ` : '') + 'EatMe';
 
   return (
-    <>
+    <HelmetProvider>
       <Helmet>
         <title>{pageTitle}</title>
         <meta name="description" content={description} />
@@ -30,7 +30,7 @@ function App() {
       </div>
 
       <Footer />
-    </>
+    </HelmetProvider>
   );
 }
 

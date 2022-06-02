@@ -1,0 +1,15 @@
+.em-container {
+  padding: 20px 3rem;
+
+  @media screen and (max-width: $em-sizes-lg) {
+    padding: 20px 3rem;
+  }
+
+  @media screen and (max-width: $em-sizes-md) {
+    padding: 20px 1.5rem;
+  }
+
+  @media screen and (max-width: $em-sizes-sm) {
+    padding: 0;
+  }
+}
