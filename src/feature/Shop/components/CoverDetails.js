@@ -19,7 +19,18 @@ export default function CoverDetails() {
             </span>
             (500+) • 0.20 miles away • Opens at 11:00 • Free delivery • $7.00 minimum
           </div>
-          <div>Info</div>
+          <div className="em-cover__details__info">
+            <FontAwesomeIcon icon={Icons.info} className="me-3" />
+            <div className="d-flex flex-column">
+              <span>Info</span>
+              <span>Map, allergens and hygiene rating</span>
+            </div>
+            <FontAwesomeIcon
+              icon={Icons.chevronRight}
+              color={colors.primaryColor}
+              className="ms-4"
+            />
+          </div>
         </div>
         <div className="col-12 col-lg-5 em-cover__details__extra">
           <div className="p-2">

@@ -8,6 +8,8 @@ import {
   faMotorcycle,
   faUserGroup,
   faStar,
+  faInfoCircle,
+  faAngleRight,
 } from '@fortawesome/free-solid-svg-icons';
 
 library.add(
@@ -18,7 +20,9 @@ library.add(
   faTag,
   faMotorcycle,
   faUserGroup,
-  faStar
+  faStar,
+  faInfoCircle,
+  faAngleRight
 );
 
 export const Icons = {
@@ -30,4 +34,6 @@ export const Icons = {
   deliveryPerson: 'fa-motorcycle',
   userGroup: 'fa-user-group',
   star: 'fa-star',
+  info: 'fa-circle-info',
+  chevronRight: 'fa-angle-right',
 };
