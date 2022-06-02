@@ -55,10 +55,13 @@ const DrawerPanel = ({ isOpen, children, className, onClose, position = 'right' 
   return createPortal(
     <div
       aria-hidden={isOpen ? 'false' : 'true'}
-      className={cn('em-drawer__container', {
-        open: isOpen,
-        className,
-      })}
+      className={cn(
+        'em-drawer__container',
+        {
+          open: isOpen,
+        },
+        className
+      )}
     >
       <div className={cn('em-drawer', position)} role="dialog">
         {children}

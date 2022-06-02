@@ -10,6 +10,7 @@
 
 // features
 @import './features/feature.shop';
+@import './features/feature.dishes';
 
 // components
 @import './components/components.button';
@@ -18,6 +19,8 @@
 @import './components/components.drawer';
 @import './components/components.footer';
 @import './components/components.sticky';
+@import './components/components.card';
+@import './components/components.basket';
 
 // trumps
 @import './trumps/trumps.layout';
@@ -25,6 +28,7 @@
 :export {
   primaryColor: $em-clr-primary;
   secondaryColor: $em-clr-white;
+  lightGrayColor: $em-clr-silver;
   errorColor: $em-clr-red;
   whiteColor: $em-clr-white;
   greenColor: $em-clr-green;

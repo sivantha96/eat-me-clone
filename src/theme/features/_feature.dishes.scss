@@ -1,0 +1,57 @@
+.em-dishes-view {
+  &__header {
+    margin-bottom: 20px;
+  }
+
+  &__list {
+    box-shadow: none;
+    display: grid;
+    grid-auto-rows: auto;
+    gap: 18px;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: none;
+
+    @media screen and (max-width: $em-sizes-lg) {
+      box-shadow: 0 1px 4px $em-clr-black-15;
+      display: block;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    width: min-content;
+    flex-grow: 100;
+
+    &__container {
+      box-shadow: 0 1px 4px $em-clr-black-15;
+      border-radius: 5px;
+      padding: 20px;
+      background: $em-clr-white;
+      display: flex;
+
+      @media screen and (max-width: $em-sizes-lg) {
+        box-shadow: none;
+        border: 1px solid $em-clr-white-50;
+        border-radius: 0;
+      }
+    }
+
+    &__description {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      font-size: 15px;
+    }
+
+    &__image {
+      height: 100px;
+      width: 100px;
+      background-size: cover;
+      margin-left: 10px;
+    }
+  }
+}

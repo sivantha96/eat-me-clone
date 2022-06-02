@@ -4,7 +4,7 @@ import CoverImage from './CoverImage';
 
 const Cover = React.forwardRef((_props, ref) => {
   return (
-    <div ref={ref} className="em-cover em-container">
+    <div ref={ref} className="em-cover em-container-fluid">
       <CoverImage />
       <CoverDetails />
     </div>

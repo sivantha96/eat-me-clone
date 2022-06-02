@@ -1,10 +1,22 @@
 .em-sticky {
   &__header {
     width: 100%;
-    border-top: 1px solid $em-clr-black-15;
+    border-top: 1px solid $em-clr-silver;
     box-shadow: 0 4px 10px 0px $em-clr-black-15;
     display: flex;
     align-items: center;
     overflow-x: scroll;
+    z-index: 10;
+    position: relative;
+    background: $em-clr-white;
+    height: 80px;
+
+    &.is-sticky {
+      top: 100px;
+
+      @media screen and (max-width: $em-sizes-sm) {
+        top: 80px;
+      }
+    }
   }
 }

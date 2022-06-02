@@ -1,0 +1,16 @@
+.em-basket {
+  width: 100%;
+  height: min-content;
+  padding: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  border-radius: 4px;
+  background: $em-clr-white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &.is-sticky {
+    top: 200px;
+  }
+}

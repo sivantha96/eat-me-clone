@@ -11,6 +11,7 @@ export default function Button({
   className,
   children,
   filled = false,
+  disabled = false,
   round = false,
   noBorder = false,
   size = 'regular',
@@ -41,7 +42,7 @@ export default function Button({
 
   return (
     <button
-      onClick={onClick}
+      onClick={disabled ? undefined : onClick}
       className={cn('em-button', className, {
         'em-button--primary': filled && color === 'primary',
         'em-button--secondary': filled && color === 'secondary',
@@ -53,6 +54,7 @@ export default function Button({
         'em-button--regular': size === 'regular',
         'em-button--large': size === 'large',
         'em-button--small': size === 'small',
+        'em-button--disabled': disabled,
       })}
     >
       {icon ? (
@@ -76,6 +78,7 @@ Button.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
   filled: PropTypes.bool,
+  disabled: PropTypes.bool,
   round: PropTypes.bool,
   noBorder: PropTypes.bool,
   icon: PropTypes.string,
