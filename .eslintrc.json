@@ -25,7 +25,7 @@
     ],
     "semi": [2, "always"],
     "max-len": ["error", { "code": 100, "tabWidth": 4 }],
-    "space-before-function-paren": [2, "never"],
+    "space-before-function-paren": 0,
     "camelcase": 0,
     "multiline-ternary": 0
   }

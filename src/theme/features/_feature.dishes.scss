@@ -1,6 +1,8 @@
 .em-dishes-view {
+  margin-bottom: 40px;
+
   &__header {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
 
   &__list {
@@ -55,6 +57,14 @@
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
       font-size: 15px;
+    }
+
+    &__name {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
     }
 
     &__image {

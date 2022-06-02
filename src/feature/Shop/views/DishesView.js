@@ -1,172 +1,38 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-const bg =
-  // eslint-disable-next-line max-len
-  'https://rs-menus-api.roocdn.com/images/0172a091-9ecd-476e-a54a-6787ee4a1c5b/image.jpeg?width=928&height=522&auto=webp&format=jpg&fit=crop';
 
-const DishesView = ({ title, description, id }) => {
+const placeholder = 'https://via.placeholder.com/400x400/eeeeee/969696?text=Not+Found';
+
+const DishesView = ({ title, description, id, data }) => {
+  const renderItems = () => {
+    if (!data || data.length === 0) return;
+
+    return data.map((item) => (
+      <li key={item.dishId.toString()} className="em-dishes-view__item__container">
+        <div className="em-dishes-view__item">
+          <strong className="em-dishes-view__item__name">{item.dishName}</strong>
+          <span className="em-dishes-view__item__description">{item.description}</span>
+          <span>
+            {item.currency} {item.displayPricing}
+          </span>
+        </div>
+        <div
+          className="em-dishes-view__item__image"
+          style={{
+            backgroundImage: `url(${item.imageUrl}) , url(${placeholder})`,
+          }}
+        ></div>
+      </li>
+    ));
+  };
+
   return (
     <div className="em-dishes-view" id={id}>
       <div className="em-dishes-view__header">
-        <h2>{title}</h2>
+        <h3 style={{ fontWeight: 'bold' }}>{title}</h3>
         <span>{description}</span>
       </div>
-      <ul className="em-dishes-view__list">
-        <li className="em-dishes-view__item__container">
-          <div className="em-dishes-view__item">
-            <strong>Avacado Caesar Salad</strong>
-            <span className="em-dishes-view__item__description">
-              Chicken or mozzarella, avocado, roasted tomato, super grains, olives, croutons, pesto,
-              balsamic vinaigrette.
-            </span>
-            <span>$9,99</span>
-          </div>
-          <div
-            className="em-dishes-view__item__image"
-            style={{ backgroundImage: `url(${bg})` }}
-          ></div>
-        </li>
-        <li className="em-dishes-view__item__container">
-          <div className="em-dishes-view__item">
-            <strong>Avacado Caesar Salad</strong>
-            <span className="em-dishes-view__item__description">
-              Chicken or mozzarella, avocado, roasted tomato, super grains, olives, croutons, pesto,
-              balsamic vinaigrette.
-            </span>
-            <span>$9,99</span>
-          </div>
-          <div
-            className="em-dishes-view__item__image"
-            style={{ backgroundImage: `url(${bg})` }}
-          ></div>
-        </li>
-        <li className="em-dishes-view__item__container">
-          <div className="em-dishes-view__item">
-            <strong>Avacado Caesar Salad</strong>
-            <span className="em-dishes-view__item__description">
-              Chicken or mozzarella, avocado, roasted tomato, super grains, olives, croutons, pesto,
-              balsamic vinaigrette.
-            </span>
-            <span>$9,99</span>
-          </div>
-          <div
-            className="em-dishes-view__item__image"
-            style={{ backgroundImage: `url(${bg})` }}
-          ></div>
-        </li>
-        <li className="em-dishes-view__item__container">
-          <div className="em-dishes-view__item">
-            <strong>Avacado Caesar Salad</strong>
-            <span className="em-dishes-view__item__description">
-              Chicken or mozzarella, avocado, roasted tomato, super grains, olives, croutons, pesto,
-              balsamic vinaigrette.
-            </span>
-            <span>$9,99</span>
-          </div>
-          <div
-            className="em-dishes-view__item__image"
-            style={{ backgroundImage: `url(${bg})` }}
-          ></div>
-        </li>
-        <li className="em-dishes-view__item__container">
-          <div className="em-dishes-view__item">
-            <strong>Avacado Caesar Salad</strong>
-            <span className="em-dishes-view__item__description">
-              Chicken or mozzarella, avocado, roasted tomato, super grains, olives, croutons, pesto,
-              balsamic vinaigrette.
-            </span>
-            <span>$9,99</span>
-          </div>
-          <div
-            className="em-dishes-view__item__image"
-            style={{ backgroundImage: `url(${bg})` }}
-          ></div>
-        </li>
-        <li className="em-dishes-view__item__container">
-          <div className="em-dishes-view__item">
-            <strong>Avacado Caesar Salad</strong>
-            <span className="em-dishes-view__item__description">
-              Chicken or mozzarella, avocado, roasted tomato, super grains, olives, croutons, pesto,
-              balsamic vinaigrette.
-            </span>
-            <span>$9,99</span>
-          </div>
-          <div
-            className="em-dishes-view__item__image"
-            style={{ backgroundImage: `url(${bg})` }}
-          ></div>
-        </li>
-        <li className="em-dishes-view__item__container">
-          <div className="em-dishes-view__item">
-            <strong>Avacado Caesar Salad</strong>
-            <span className="em-dishes-view__item__description">
-              Chicken or mozzarella, avocado, roasted tomato, super grains, olives, croutons, pesto,
-              balsamic vinaigrette.
-            </span>
-            <span>$9,99</span>
-          </div>
-          <div
-            className="em-dishes-view__item__image"
-            style={{ backgroundImage: `url(${bg})` }}
-          ></div>
-        </li>
-        <li className="em-dishes-view__item__container">
-          <div className="em-dishes-view__item">
-            <strong>Avacado Caesar Salad</strong>
-            <span className="em-dishes-view__item__description">
-              Chicken or mozzarella, avocado, roasted tomato, super grains, olives, croutons, pesto,
-              balsamic vinaigrette.
-            </span>
-            <span>$9,99</span>
-          </div>
-          <div
-            className="em-dishes-view__item__image"
-            style={{ backgroundImage: `url(${bg})` }}
-          ></div>
-        </li>
-        <li className="em-dishes-view__item__container">
-          <div className="em-dishes-view__item">
-            <strong>Avacado Caesar Salad</strong>
-            <span className="em-dishes-view__item__description">
-              Chicken or mozzarella, avocado, roasted tomato, super grains, olives, croutons, pesto,
-              balsamic vinaigrette.
-            </span>
-            <span>$9,99</span>
-          </div>
-          <div
-            className="em-dishes-view__item__image"
-            style={{ backgroundImage: `url(${bg})` }}
-          ></div>
-        </li>
-        <li className="em-dishes-view__item__container">
-          <div className="em-dishes-view__item">
-            <strong>Avacado Caesar Salad</strong>
-            <span className="em-dishes-view__item__description">
-              Chicken or mozzarella, avocado, roasted tomato, super grains, olives, croutons, pesto,
-              balsamic vinaigrette.
-            </span>
-            <span>$9,99</span>
-          </div>
-          <div
-            className="em-dishes-view__item__image"
-            style={{ backgroundImage: `url(${bg})` }}
-          ></div>
-        </li>
-        <li className="em-dishes-view__item__container">
-          <div className="em-dishes-view__item">
-            <strong>Avacado Caesar Salad</strong>
-            <span className="em-dishes-view__item__description">
-              Chicken or mozzarella, avocado, roasted tomato, super grains, olives, croutons, pesto,
-              balsamic vinaigrette.
-            </span>
-            <span>$9,99</span>
-          </div>
-          <div
-            className="em-dishes-view__item__image"
-            style={{ backgroundImage: `url(${bg})` }}
-          ></div>
-        </li>
-      </ul>
+      <ul className="em-dishes-view__list">{renderItems()}</ul>
     </div>
   );
 };
@@ -175,6 +41,7 @@ DishesView.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
   id: PropTypes.string,
+  data: PropTypes.array,
 };
 
 export default DishesView;
