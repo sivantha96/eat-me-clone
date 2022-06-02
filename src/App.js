@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Helmet from 'react-helmet';
+import { useSelector } from 'react-redux';
+import Drawer from './components/Drawer';
+import Header from './components/Header';
 
 function App() {
+  const title = useSelector((state) => state.app.pageTitle);
+  const description = useSelector((state) => state.app.pageDescription);
+  const pageTitle = (title ? `${title} | ` : '') + 'Eat Me';
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Helmet>
+        <title>{pageTitle}</title>
+        <meta name="description" content={description} />
+      </Helmet>
+
+      <Header />
+
+      <Drawer position="right" />
+
+      <div className="page"></div>
+
     </div>
   );
 }

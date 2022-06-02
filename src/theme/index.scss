@@ -1,0 +1,24 @@
+// settings
+@import './settings/settings.color';
+@import './settings/settings.fonts';
+@import './settings/settings.sizes';
+
+// generics
+@import './generics/generics.page';
+
+// utilities
+
+// features
+
+// components
+@import './components/components.button';
+@import './components/components.card';
+@import './components/components.header';
+@import './components/components.drawer';
+
+:export {
+  primaryColor: $em-clr-primary;
+  secondaryColor: $em-clr-primary-75;
+  errorColor: $em-clr-red;
+  whiteColor: $em-clr-white;
+}

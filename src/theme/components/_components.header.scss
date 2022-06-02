@@ -1,0 +1,36 @@
+.em-header {
+  position: fixed;
+  height: 100px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #eeeeee;
+  background: $em-clr-white;
+
+  @media screen and (max-width: $em-sizes-sm) {
+    height: 80px;
+  }
+
+  &__logo {
+    border-radius: 8px;
+  }
+
+  &__right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  &__center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__left {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}

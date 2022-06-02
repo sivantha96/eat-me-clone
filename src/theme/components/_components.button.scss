@@ -1,0 +1,43 @@
+.em-button {
+  border: 1px solid $em-clr-black-15;
+  padding: 10px 15px;
+  border-radius: 5px;
+  background: $em-clr-transparent;
+  color: $em-clr-black-75;
+  outline: none;
+
+  &:hover {
+    border: 1px solid $em-clr-black-25;
+  }
+
+  &:active {
+    background: $em-clr-white-50;
+  }
+
+  &:focus {
+    box-shadow: 0 0 2px 2px $em-clr-primary;
+  }
+
+  &__icon,
+  &__title {
+    margin: 0 5px;
+  }
+
+  &--primary {
+    border: 1px solid $em-clr-primary;
+    background: $em-clr-primary;
+    color: $em-clr-white;
+  }
+
+  &--secondary {
+    border: 1px solid $em-clr-primary-75;
+    background: $em-clr-primary-75;
+    color: $em-clr-white;
+  }
+
+  &--error {
+    border: 1px solid $em-clr-red;
+    background: $em-clr-red;
+    color: $em-clr-white;
+  }
+}
