@@ -30,11 +30,21 @@
       padding: 20px;
       background: $em-clr-white;
       display: flex;
+      transition: box-shadow 0.2s ease-in-out;
+      cursor: pointer;
+
+      &:hover {
+        box-shadow: 0 10px 10px 1px $em-clr-black-15;
+      }
 
       @media screen and (max-width: $em-sizes-lg) {
         box-shadow: none;
         border: 1px solid $em-clr-white-50;
         border-radius: 0;
+
+        &:hover {
+          box-shadow: none;
+        }
       }
     }
 

@@ -1,5 +1,5 @@
 /* eslint-disable no-var */
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import Button from '../../components/Button';
 import * as appActions from '../../store/AppStore/actions';
@@ -11,6 +11,7 @@ function Shop() {
   const dispatch = useDispatch();
   const coverRef = useRef();
   const [coverHeight, setCoverHeight] = useState(0);
+  const [intersectingSection, setIntersectingSection] = useState('dish-0');
 
   const handleScroll = useCallback(() => {
     const header = document.querySelector('.em-sticky__header');
@@ -25,6 +26,23 @@ function Shop() {
     }
   }, [coverHeight]);
 
+  const io = useMemo(
+    () =>
+      new IntersectionObserver(
+        (events) => {
+          events.forEach((e) => {
+            if (e.isIntersecting) {
+              setIntersectingSection(e.target.id);
+            }
+          });
+        },
+        {
+          threshold: [0.5],
+        }
+      ),
+    []
+  );
+
   const handleResize = () => {
     setCoverHeight(coverRef.current?.clientHeight);
   };
@@ -37,10 +55,16 @@ function Shop() {
     // set the height of the cover
     setCoverHeight(coverRef.current?.clientHeight);
 
+    // listen to window resize events
     window.addEventListener('resize', handleResize);
 
+    // observe intersections of dishes sections
+    document.querySelectorAll('.em-dishes-view').forEach((elem) => io.observe(elem));
+
     return () => {
+      // cleanup listeners
       window.removeEventListener('resize', handleResize);
+      document.querySelectorAll('.em-dishes-view').forEach((elem) => io.unobserve(elem));
     };
   }, []);
 
@@ -56,18 +80,38 @@ function Shop() {
     <div className="em-shop">
       <Cover ref={coverRef} />
       <div className="em-sticky__header em-container">
-        <Button title="Salads" color="primary" size="small" round noBorder />
-        <Button title="Salads" color="primary" size="small" round noBorder />
-        <Button title="Salads" color="primary" size="small" round noBorder />
-        <Button title="Salads" color="primary" size="small" round noBorder />
+        <Button
+          filled={intersectingSection === 'dish-0'}
+          title="Salads"
+          color="primary"
+          size="small"
+          round
+          noBorder={intersectingSection !== 'dish-0'}
+        />
+        <Button
+          filled={intersectingSection === 'dish-1'}
+          title="Salads"
+          color="primary"
+          size="small"
+          round
+          noBorder={intersectingSection !== 'dish-1'}
+        />
+        <Button
+          filled={intersectingSection === 'dish-2'}
+          title="Salads"
+          color="primary"
+          size="small"
+          round
+          noBorder={intersectingSection !== 'dish-2'}
+        />
       </div>
 
       <div className="em-container">
         <div className="row">
           <div className="col-12 col-md-7 col-lg-8">
-            <DishesView title={mockData.title} description={mockData.description} />
-            <DishesView title={mockData.title} description={mockData.description} />
-            <DishesView title={mockData.title} description={mockData.description} />
+            <DishesView id={'dish-0'} title={mockData.title} description={mockData.description} />
+            <DishesView id={'dish-1'} title={mockData.title} description={mockData.description} />
+            <DishesView id={'dish-2'} title={mockData.title} description={mockData.description} />
           </div>
           <div className="col-md-5 col-lg-4 d-none d-md-flex position-relative">
             <Basket />
