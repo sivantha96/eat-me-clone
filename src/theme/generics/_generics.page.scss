@@ -10,3 +10,12 @@
 * {
   font-family: $em-fonts-plex;
 }
+
+a {
+  color: $em-clr-white;
+  text-decoration: none;
+
+  &:hover {
+    color: $em-clr-primary;
+  }
+}

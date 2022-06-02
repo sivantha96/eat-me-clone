@@ -1,0 +1,26 @@
+.em-footer {
+  padding: 20px 20px 0 20px;
+  background: $em-clr-gray;
+  color: $em-clr-white;
+
+  &__section {
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    background: $em-clr-light-gray;
+    text-decoration: none;
+    border-radius: 4px;
+    height: 100%;
+    width: 100%;
+
+    &__title {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    &__item {
+      margin-bottom: 5px;
+    }
+  }
+}

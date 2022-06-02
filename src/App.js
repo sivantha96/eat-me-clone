@@ -2,6 +2,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import { useSelector } from 'react-redux';
 import Drawer from './components/Drawer';
+import Footer from './components/Footer';
 import Header from './components/Header';
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
 
       <div className="page"></div>
 
+      <Footer />
     </div>
   );
 }
