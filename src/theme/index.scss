@@ -9,17 +9,19 @@
 // utilities
 
 // features
+@import './features/feature.shop';
 
 // components
 @import './components/components.button';
-@import './components/components.card';
+@import './components/components.cover';
 @import './components/components.header';
 @import './components/components.drawer';
 @import './components/components.footer';
 
 :export {
   primaryColor: $em-clr-primary;
-  secondaryColor: $em-clr-primary-75;
+  secondaryColor: $em-clr-white;
   errorColor: $em-clr-red;
   whiteColor: $em-clr-white;
+  greenColor: $em-clr-green;
 }

@@ -1,6 +1,5 @@
 .em-button {
   border: 1px solid $em-clr-black-15;
-  padding: 10px 15px;
   border-radius: 5px;
   background: $em-clr-transparent;
   color: $em-clr-black-75;
@@ -23,21 +22,91 @@
     margin: 0 5px;
   }
 
+  &--round {
+    border-radius: 50px;
+  }
+
+  &--regular {
+    padding: 10px 15px;
+  }
+
+  &--large {
+    padding: 20px 30px;
+  }
+
+  &--small {
+    padding: 2px 10px;
+  }
+
   &--primary {
     border: 1px solid $em-clr-primary;
     background: $em-clr-primary;
     color: $em-clr-white;
+
+    &--no-border {
+      background: $em-clr-transparent;
+      border: 1px solid $em-clr-transparent;
+      color: $em-clr-primary;
+      box-shadow: none;
+
+      &:hover,
+      &:active,
+      &:focus {
+        border: 1px solid $em-clr-transparent;
+        background: $em-clr-transparent;
+      }
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
   }
 
   &--secondary {
-    border: 1px solid $em-clr-primary-75;
-    background: $em-clr-primary-75;
-    color: $em-clr-white;
+    border: 1px solid $em-clr-white;
+    background: $em-clr-white;
+    color: $em-clr-black;
+
+    &--no-border {
+      background: $em-clr-transparent;
+      border: 1px solid $em-clr-transparent;
+      color: $em-clr-black;
+      box-shadow: none;
+
+      &:hover,
+      &:active,
+      &:focus {
+        border: 1px solid $em-clr-transparent;
+        background: $em-clr-transparent;
+      }
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
   }
 
   &--error {
     border: 1px solid $em-clr-red;
     background: $em-clr-red;
     color: $em-clr-white;
+
+    &--no-border {
+      background: $em-clr-transparent;
+      border: 1px solid $em-clr-transparent;
+      color: $em-clr-red;
+      box-shadow: none;
+
+      &:hover,
+      &:active,
+      &:focus {
+        border: 1px solid $em-clr-transparent;
+        background: $em-clr-transparent;
+      }
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
   }
 }

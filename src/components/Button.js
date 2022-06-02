@@ -9,7 +9,11 @@ export default function Button({
   onClick,
   icon,
   className,
+  children,
   filled = false,
+  round = false,
+  noBorder = false,
+  size = 'regular',
   iconSize = '1x',
   color = 'primary',
 }) {
@@ -29,7 +33,9 @@ export default function Button({
   }
 
   // setting text color to white when filled
-  if (filled) {
+  if (filled && color === 'secondary') {
+    iconColor = colors.primaryColor;
+  } else if (filled) {
     iconColor = colors.whiteColor;
   }
 
@@ -40,6 +46,13 @@ export default function Button({
         'em-button--primary': filled && color === 'primary',
         'em-button--secondary': filled && color === 'secondary',
         'em-button--error': filled && color === 'error',
+        'em-button--primary--no-border': noBorder && color === 'primary',
+        'em-button--secondary--no-border': noBorder && color === 'secondary',
+        'em-button--error--no-border': noBorder && color === 'error',
+        'em-button--round': round,
+        'em-button--regular': size === 'regular',
+        'em-button--large': size === 'large',
+        'em-button--small': size === 'small',
       })}
     >
       {icon ? (
@@ -52,6 +65,7 @@ export default function Button({
       ) : null}
 
       {title ? <span className="em-button__title">{title}</span> : null}
+      {children}
     </button>
   );
 }
@@ -60,22 +74,12 @@ Button.propTypes = {
   title: PropTypes.string,
   onClick: PropTypes.func,
   className: PropTypes.string,
+  children: PropTypes.node,
   filled: PropTypes.bool,
+  round: PropTypes.bool,
+  noBorder: PropTypes.bool,
   icon: PropTypes.string,
+  size: PropTypes.oneOf(['regular', 'large', 'small']),
   color: PropTypes.oneOf(['primary', 'secondary', 'error']),
-  iconSize: PropTypes.oneOf([
-    'xs',
-    'lg',
-    'sm',
-    '1x',
-    '2x',
-    '3x',
-    '4x',
-    '5x',
-    '6x',
-    '7x',
-    '8x',
-    '9x',
-    '10x',
-  ]),
+  iconSize: PropTypes.oneOf(['xs', 'lg', 'sm', '1x', '2x', '3x']),
 };

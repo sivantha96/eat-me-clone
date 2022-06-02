@@ -1,0 +1,52 @@
+.em-cover {
+  display: grid;
+  gap: 24px;
+  grid-template-areas: 'image details';
+  grid-template-columns: 30% 1fr;
+  grid-template-rows: auto;
+  padding: 20px 0px;
+
+  @media screen and (max-width: $em-sizes-sm) {
+    display: block;
+    padding: 0px;
+  }
+
+  &__image {
+    grid-area: image;
+    background-size: cover;
+    width: 100%;
+    border-radius: 5px;
+    position: relative;
+
+    @media screen and (max-width: $em-sizes-sm) {
+      height: 30vh;
+    }
+
+    &__button {
+      position: absolute;
+      right: 15px;
+      bottom: 15px;
+    }
+  }
+
+  &__details {
+    grid-area: details;
+    background-size: cover;
+    width: 100%;
+
+    @media screen and (max-width: $em-sizes-sm) {
+      display: block;
+      padding: 20px;
+    }
+
+    &__extra {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+
+      @media screen and (max-width: $em-sizes-lg) {
+        align-items: flex-start;
+      }
+    }
+  }
+}
