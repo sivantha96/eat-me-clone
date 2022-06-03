@@ -66,6 +66,18 @@
         opacity: 0.8;
       }
     }
+
+    &:hover {
+      border: 1px solid $em-clr-primary-75;
+    }
+
+    &:active {
+      background: $em-clr-primary-75;
+    }
+
+    &:focus {
+      box-shadow: 0 0 2px 2px $em-clr-primary;
+    }
   }
 
   &--secondary {

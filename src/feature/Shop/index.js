@@ -59,8 +59,8 @@ function Shop() {
 
   useEffect(() => {
     // update title header
-    dispatch(appActions.setPageTitle('Shop'));
-    dispatch(appActions.setPageDescription('Shop Description'));
+    dispatch(appActions.setPageTitle("Tossed - St Martin's Lane"));
+    dispatch(appActions.setPageDescription(''));
 
     dispatch(actions.requestMenu());
     dispatch(actions.requestDishes());
