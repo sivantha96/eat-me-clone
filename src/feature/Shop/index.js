@@ -57,6 +57,10 @@ function Shop() {
     setCoverHeight(coverRef.current?.clientHeight);
   };
 
+  const handleOnClickMenu = (id) => {
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth', block: 'end' });
+  };
+
   useEffect(() => {
     // update title header
     dispatch(appActions.setPageTitle("Tossed - St Martin's Lane"));
@@ -104,9 +108,9 @@ function Shop() {
   return (
     <div className="em-shop">
       <Cover ref={coverRef} />
-      <StickyHeader menu={menu} selectedId={intersectingSection} />
+      <StickyHeader menu={menu} selectedId={intersectingSection} onClickItem={handleOnClickMenu} />
 
-      <div className="em-container">
+      <div className="em-container" id="dishes-scroll-area">
         <div className="row">
           <div className="col-12 col-md-7 col-lg-8">{renderDishes()}</div>
           <div className="col-md-5 col-lg-4 d-none d-md-flex position-relative">

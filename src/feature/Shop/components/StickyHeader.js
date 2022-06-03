@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Button from '../../../components/Button';
 
-const StickyHeader = ({ menu, selectedId = '' }) => {
+const StickyHeader = ({ menu, onClickItem, selectedId = '' }) => {
   if (!menu || menu.length === 0) return;
 
   return (
@@ -17,6 +17,7 @@ const StickyHeader = ({ menu, selectedId = '' }) => {
           size="small"
           round
           noBorder={selectedId !== item.id.toString()}
+          onClick={() => onClickItem(item.id.toString())}
         />
       ))}
     </div>
@@ -26,6 +27,7 @@ const StickyHeader = ({ menu, selectedId = '' }) => {
 StickyHeader.propTypes = {
   menu: PropTypes.array,
   selectedId: PropTypes.string,
+  onClickItem: PropTypes.func,
 };
 
 export default StickyHeader;
